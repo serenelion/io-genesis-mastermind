@@ -219,6 +219,11 @@
                     
                     <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">Submit Application</button>
                 </form>
+                <div class="form-success" id="application-success" style="display: none;">
+                    <div class="form-success-icon">&#10003;</div>
+                    <h3>Application Received</h3>
+                    <p>Thank you for applying to the Village Creator Mastermind. We'll review your application and be in touch soon.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -247,6 +252,10 @@
                         <button type="submit" class="btn btn-primary">Subscribe</button>
                     </div>
                 </form>
+                <div class="form-success form-success-dark" id="newsletter-success" style="display: none;">
+                    <div class="form-success-icon">&#10003;</div>
+                    <p>You're subscribed! We'll keep you posted on upcoming masterminds.</p>
+                </div>
             </div>
             
             <div class="footer-links">
@@ -269,6 +278,45 @@
                         behavior: 'smooth'
                     });
                 }
+            });
+        });
+
+        // Netlify Forms: AJAX submission with success alerts
+        document.querySelectorAll('form[data-netlify="true"]').forEach(function(form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                var submitBtn = form.querySelector('button[type="submit"]');
+                var originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Submitting...';
+                submitBtn.disabled = true;
+
+                var formData = new FormData(form);
+
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(function(response) {
+                    if (!response.ok) throw new Error('Form submission failed');
+
+                    // Determine which success message to show
+                    var formName = form.getAttribute('name');
+                    var successId = formName === 'mastermind-newsletter'
+                        ? 'newsletter-success'
+                        : 'application-success';
+                    var successEl = document.getElementById(successId);
+
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
+                    form.reset();
+                })
+                .catch(function() {
+                    alert('There was an error submitting the form. Please try again or contact us directly.');
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
             });
         });
     </script>
