@@ -576,6 +576,96 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Schedule Grid */
+.schedule-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.day-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: var(--space-xl);
+    border: 1px solid var(--gray-100);
+    box-shadow: 0 2px 8px rgba(26, 31, 58, 0.04);
+}
+
+.day-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: var(--space-md);
+    margin-bottom: var(--space-md);
+    border-bottom: 2px solid var(--gold);
+}
+
+.day-header h3 {
+    font-size: 22px;
+    color: var(--indigo-dark);
+    margin: 0;
+}
+
+.day-theme {
+    font-size: 15px;
+    color: var(--gray-600);
+    font-weight: 500;
+}
+
+.day-list {
+    list-style: none;
+}
+
+.day-list li {
+    padding: var(--space-sm) 0;
+    color: var(--gray-600);
+    line-height: 1.6;
+}
+
+.inclusion-note {
+    background: var(--indigo-pale);
+    padding: var(--space-lg);
+    border-radius: 8px;
+    margin-top: var(--space-xl);
+    border-left: 4px solid var(--gold);
+}
+
+.inclusion-note p {
+    margin: 0;
+    color: var(--indigo-dark);
+    line-height: 1.7;
+}
+
+/* Investment Card */
+.investment-card {
+    background: var(--white);
+    padding: var(--space-xxl);
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(26, 31, 58, 0.1);
+    text-align: center;
+}
+
+.investment-price {
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--indigo-dark);
+    margin-bottom: var(--space-md);
+}
+
+.investment-note {
+    font-size: 17px;
+    color: var(--gray-600);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.footer-tagline {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.75);
+    margin-bottom: var(--space-sm);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     h1 { font-size: 32px; }
