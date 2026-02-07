@@ -509,6 +509,60 @@ strong {
     color: rgba(255, 255, 255, 0.6);
 }
 
+.footer-newsletter {
+    max-width: 520px;
+    margin: var(--space-xl) auto;
+    padding: var(--space-xl);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-newsletter h4 {
+    color: var(--white);
+    font-size: 20px;
+    margin-bottom: var(--space-sm);
+    text-align: center;
+}
+
+.footer-newsletter p {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.newsletter-input-group {
+    display: flex;
+    gap: var(--space-sm);
+}
+
+.newsletter-input-group input[type="email"] {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    font-family: var(--font-primary);
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    transition: all 0.2s;
+}
+
+.newsletter-input-group input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-input-group input[type="email"]:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-input-group button {
+    white-space: nowrap;
+}
+
 /* Newsletter */
 .newsletter-form {
     max-width: 480px;
@@ -708,5 +762,13 @@ html {
     .nav-cta {
         padding: 8px 20px;
         font-size: 14px;
+    }
+    
+    .newsletter-input-group {
+        flex-direction: column;
+    }
+    
+    .newsletter-input-group button {
+        width: 100%;
     }
 }
