@@ -1,0 +1,194 @@
+/* Schedule Design for Genesis Event */
+
+.schedule {
+    margin-top: var(--space-xxl);
+}
+
+.schedule-day {
+    background: white;
+    border-radius: 16px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+    border: 2px solid var(--pale-iris);
+    box-shadow: 0 4px 20px rgba(91, 44, 134, 0.08);
+}
+
+.schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: var(--space-md);
+    border-bottom: 2px solid var(--terralux-gold);
+    margin-bottom: var(--space-lg);
+}
+
+.schedule-header h3 {
+    color: var(--deep-indigo);
+    font-size: 28px;
+    margin: 0;
+}
+
+.schedule-theme {
+    font-family: var(--font-secondary);
+    font-style: italic;
+    color: var(--terralux-gold);
+    font-size: 18px;
+}
+
+.schedule-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.schedule-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-md);
+    padding-left: var(--space-md);
+    border-left: 3px solid var(--pale-iris);
+    transition: border-color 0.2s;
+}
+
+.schedule-item:hover {
+    border-left-color: var(--terralux-gold);
+}
+
+.schedule-time {
+    font-weight: 600;
+    color: var(--deep-indigo);
+    font-size: 16px;
+    padding-top: 4px;
+}
+
+.schedule-content h4 {
+    color: var(--royal-purple);
+    font-size: 20px;
+    margin-bottom: var(--space-xs);
+}
+
+.schedule-content p {
+    color: var(--warm-gray);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.experience-note {
+    background: linear-gradient(135deg, var(--soft-gold) 0%, var(--cream) 100%);
+    padding: var(--space-lg);
+    border-radius: 12px;
+    margin-top: var(--space-xxl);
+    border-left: 4px solid var(--terralux-gold);
+}
+
+.experience-note p {
+    margin: 0;
+    color: var(--charcoal);
+}
+
+.experience-note strong {
+    color: var(--deep-indigo);
+}
+
+.experience-note em {
+    color: var(--terralux-gold);
+}
+
+/* Homes Principles Grid */
+.homes-principles {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-xl);
+}
+
+.principle-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: var(--space-lg);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.principle-card h3 {
+    color: var(--terralux-gold);
+    font-size: 20px;
+    margin-bottom: var(--space-sm);
+}
+
+.principle-card p {
+    color: var(--soft-white);
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Ecosystem Grid */
+.ecosystem-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+    margin-top: var(--space-xl);
+}
+
+.ecosystem-card {
+    background: white;
+    padding: var(--space-lg);
+    border-radius: 12px;
+    border: 2px solid var(--terralux-gold);
+}
+
+.ecosystem-card h3 {
+    color: var(--deep-indigo);
+    margin-bottom: var(--space-sm);
+}
+
+.ecosystem-card p {
+    color: var(--warm-gray);
+    margin: 0;
+}
+
+/* Hero Badge */
+.hero-badge {
+    display: inline-block;
+    background: var(--terralux-gold);
+    color: var(--charcoal);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 20px;
+    border-radius: 20px;
+    margin-bottom: var(--space-md);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Invitation Note */
+.invitation-note {
+    text-align: center;
+    padding: var(--space-md);
+    background: linear-gradient(135deg, var(--pale-iris) 0%, var(--soft-gold) 100%);
+    border-radius: 8px;
+    margin-top: var(--space-md);
+    font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .schedule-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-xs);
+    }
+    
+    .schedule-item {
+        grid-template-columns: 1fr;
+        gap: var(--space-xs);
+    }
+    
+    .schedule-time {
+        font-size: 14px;
+    }
+    
+    .homes-principles,
+    .ecosystem-grid {
+        grid-template-columns: 1fr;
+    }
+}
